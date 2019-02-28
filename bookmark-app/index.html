@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Bookmarks Manager</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
+  <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+
+<body>
+  <header role="banner">
+    <h1 class="site-title">Bookmarks <span>Manager</span></h1>
+    <nav role="navigation">
+      <input type="text" placeholder="Search bookmarks" id="js-search-entry" />
+      <select id="js-filter-by-rating-entry">
+        <option value="0">ALL</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button id="js-add-new-button"><i class="fa-plus fa"></i><span class="mobile-add-text">Add New Bookmark</span></button>
+    </nav>
+  </header>
+  <main role="main" class="container">
+
+    <div class="error-container js-error-alert hidden">
+      <span class="error-close-btn">&times;</span>
+      <span id="error-msg"></span> <i class="ja-icons"></i>
+    </div>
+    <form class="sub-container hidden js-add-new-form add-new-form">
+      <fieldset>
+        <label for="title" class="add-new-label title-label">Title <input name="title" type="search" placeholder="Google"
+            class="add-new-input" id="add-new-name-entry" /> </label>
+
+        <label for="add-new-url-entry" class="add-new-label url-label">URL
+          <input name="url" type="url" placeholder="https://www.google.com" class="add-new-input" id="add-new-url-entry" />
+        </label>
+        <div class="rating rating-edit js-star-rating">
+          <span><input type="radio" name="rating" id="star-5" value="5" /><label for="star-5"></label></span>
+          <span><input type="radio" name="rating" id="star-4" value="4" /><label for="star-4"></label></span>
+          <span><input type="radio" name="rating" id="star-3" value="3" /><label for="star-3"></label></span>
+          <span><input type="radio" name="rating" id="star-2" value="2" /><label for="star-2"></label></span>
+          <span><input type="radio" name="rating" id="star-1" value="1" /><label for="star-1"></label></span>
+        </div>
+        <label for="add-new-description-entry" class="add-new-label desc-label">Description
+          <textarea rows="5" name="desc" type="text" placeholder="Description..." class="description-input add-new-input"
+            id="add-new-description-entry"></textarea>
+        </label>
+        <div class="button-container">
+          <button aria-label="Submit Button" type="submit" id="js-add-new-submit">
+            <i class="fas fa-check tooltip-button"></i>
+          </button>
+          <button aria-label="Cancel Button" type="reset" id="js-add-new-cancel">
+            <i class="fas fa-times tooltip-button"></i>
+          </button>
+        </div>
+      </fieldset>
+    </form>
+    <section class="sub-container">
+      <ul class="bookmark-list" id="js-bookmarks"></ul>
+    </section>
+  </main>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="scripts/api.js"></script>
+  <script type="text/javascript" src="scripts/store.js"></script>
+  <script type="text/javascript" src="scripts/bookmarks.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+
+</html>
