@@ -3,5 +3,5 @@ module.exports = {
   NODE_ENV: process.env.NODE_ENV || 'development',
   DB_URL:
     process.env.DB_URL ||
-    'postgresql://dunder_mifflin@localhost/bookmarks'
+    'postgresql://dunder_mifflin_admin@localhost/bookmarks'
 };

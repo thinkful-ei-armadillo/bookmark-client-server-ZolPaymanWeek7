@@ -4,6 +4,7 @@ import AddBookmark from './AddBookmark/AddBookmark';
 import BookmarkList from './BookmarkList/BookmarkList';
 import BookmarksContext from './BookmarksContext';
 import Nav from './Nav/Nav';
+import EditBookmark from './EditBookmark/EditBookmark';
 import config from './config';
 import './App.css';
 
@@ -24,6 +25,10 @@ class App extends Component {
     this.setState({
       bookmarks: [ ...this.state.bookmarks, bookmark ],
     })
+  }
+
+  updateBookamrk = () => {
+
   }
 
   componentDidMount() {
@@ -48,6 +53,7 @@ class App extends Component {
     const contextValue = {
       bookmarks: this.state.bookmarks,
       addBookmark: this.addBookmark,
+      updateBookmark: this.updateBookmark,
     }
     return (
       <main className='App'>
@@ -63,6 +69,10 @@ class App extends Component {
               exact
               path='/'
               component={BookmarkList}
+            />
+            <Route 
+              path='/edit/:bookmarkId'
+              component={EditBookmark}
             />
           </div>
         </BookmarksContext.Provider>
