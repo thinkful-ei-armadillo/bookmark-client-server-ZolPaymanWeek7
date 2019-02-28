@@ -97,7 +97,7 @@ bookmarkRouter
   .patch(bodyParser, (req, res, next) => {
     const { title, url, description, rating } = req.body;
     const bookmarkToUpdate = { title, url, description, rating };
-
+    console.log(bookmarkToUpdate);
     const numberOfValues = Object.values(bookmarkToUpdate).filter(Boolean)
       .length;
     if (numberOfValues === 0) {
